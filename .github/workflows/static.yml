@@ -3,7 +3,7 @@ name: Deploy Vue Site
 on:
   push:
     branches:
-      - main # Укажите вашу главную ветку (main или master)
+      - master
 
 permissions:
   contents: write
