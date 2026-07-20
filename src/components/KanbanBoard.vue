@@ -83,4 +83,15 @@ function handleRemove(columnId: ColumnId, taskId: TaskId): void {
   /* Горизонтальный скролл на узких экранах вместо ломаной сетки */
   overflow-x: auto;
 }
+
+/* Мобильные: колонки листаются свайпом с прилипанием к краю экрана */
+@media (max-width: 640px) {
+  .kanban-board {
+    gap: 0.75rem;
+    padding: 0.75rem;
+    scroll-snap-type: x mandatory;
+    /* Инерционный скролл на iOS */
+    -webkit-overflow-scrolling: touch;
+  }
+}
 </style>

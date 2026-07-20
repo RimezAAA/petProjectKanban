@@ -119,6 +119,13 @@ const assignee = computed(() => findUser(props.task.assigneeId))
   opacity: 1;
 }
 
+/* На тач-устройствах hover недоступен — кнопки действий видны всегда */
+@media (hover: none) {
+  .task-card__actions {
+    opacity: 1;
+  }
+}
+
 .task-card__title {
   margin: 0;
   font-size: 0.95rem;

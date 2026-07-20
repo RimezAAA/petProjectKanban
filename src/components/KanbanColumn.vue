@@ -104,6 +104,24 @@ const dragging = ref(false)
   border: 1px solid var(--p-surface-200);
 }
 
+/* Планшеты: колонки чуть уже, чтобы помещалось больше без скролла */
+@media (max-width: 1024px) {
+  .kanban-column {
+    width: 270px;
+    min-width: 270px;
+  }
+}
+
+/* Мобильные: колонка почти во всю ширину + точка прилипания для scroll-snap.
+   Край соседней колонки остаётся виден — подсказка, что доска листается */
+@media (max-width: 640px) {
+  .kanban-column {
+    width: min(85vw, 320px);
+    min-width: min(85vw, 320px);
+    scroll-snap-align: start;
+  }
+}
+
 .kanban-column__header {
   display: flex;
   align-items: center;

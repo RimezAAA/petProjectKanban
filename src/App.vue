@@ -21,6 +21,8 @@ const { resetBoard } = useBoard()
         severity="secondary"
         outlined
         size="small"
+        class="app__reset"
+        aria-label="Сбросить доску"
         @click="resetBoard"
       />
     </header>
@@ -74,6 +76,26 @@ const { resetBoard } = useBoard()
 .app__main {
   flex: 1;
   min-height: 0;
+}
+
+/* Мобильные: компактная шапка, подзаголовок скрыт, у кнопки сброса — только иконка */
+@media (max-width: 640px) {
+  .app__header {
+    padding: 0.625rem 0.875rem;
+  }
+
+  .app__title {
+    font-size: 1.1rem;
+  }
+
+  .app__subtitle {
+    display: none;
+  }
+
+  /* Прячем текст кнопки PrimeVue, оставляя иконку и aria-label для доступности */
+  .app__reset :deep(.p-button-label) {
+    display: none;
+  }
 }
 </style>
 
