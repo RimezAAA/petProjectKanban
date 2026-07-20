@@ -9,7 +9,7 @@ import App from './App.vue'
 
 const app = createApp(App)
 
-// PrimeVue с темой Aura; тёмный режим отключён — дизайн-система светлая
+// PrimeVue с темой Aura; тёмный режим отключён — дизайн-система светлая.
 app.use(PrimeVue, {
   theme: {
     preset: Aura,
